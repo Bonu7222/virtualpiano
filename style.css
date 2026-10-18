@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #1e1e24;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.piano-wrapper {
+    background: #111;
+    padding: 20px 20px 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.1);
+
+    border-bottom: 15px solid #2a2a2a;
+}
+
+.piano {
+    display: flex;
+    position: relative;
+    height: 250px;
+}
+
+.key {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    font-weight: bold;
+    transition: all 0.08s ease;
+    border-radius: 0 0 8px 8px;
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.1);
+}
+
+.white {
+    width: 70px;
+    height: 100%;
+    background: #f8f8f8;
+    color: #333;
+    border: 1px solid #333;
+    border-top: none;
+    z-index: 1;
+    box-shadow: 0 5px 0 #999, 0 10px 10px rgba(0,0,0,0.4);
+    margin: 0 2px;
+}
+
+.white.active {
+    background: #e0e0e0;
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #999, 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.black {
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 60%;
+    background: #1a1a1a;
+    color: #ccc;
+    font-size: 14px;
+    border-radius: 0 0 6px 6px;
+    z-index: 2;
+    box-shadow: 0 5px #000, 0 8px 10px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+}
+
+.black.active {
+    background: #333;
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #000, 0 2px 5px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.key[data-key="w"]{left:53px;}
+.key[data-key="e"]{left:125px;}
+.key[data-key="t"]{left:269px;}
+.key[data-key="y"]{left:341px;}
+.key[data-key="u"]{left:413px;}
+.key[data-key="o"]{left:557px;}
+.key[data-key="p"]{left:629px;}
+
+.white:hover{background: #e6e6e6;}
+.black:hover{background: #2a2a2a;}
