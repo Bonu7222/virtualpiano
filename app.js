@@ -5,7 +5,7 @@ const audioBase = 'https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/acoust
 
 keys.forEach(key => {
     const note = key.dataset.note;
-    fetch(`${audioBase}${note}.mp3`)
+    fetch(`${audioBase}${encodeURIComponent(note)}.mp3`)
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.arrayBuffer();
